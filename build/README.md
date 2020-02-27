@@ -469,12 +469,20 @@ Installs the current development version of Agones into the Kubernetes cluster
 Removes Agones from the Kubernetes cluster
 
 #### `make test-e2e`
-Runs end-to-end tests on the previously installed version of Agones.
+Runs all end-to-end tests on the previously installed version of Agones.
 These tests validate Agones flow from start to finish.
 
 It uses the KUBECONFIG to target a Kubernetes cluster.
 
 See [`make minikube-test-e2e`](#make-minikube-test-e2e) to run end-to-end tests on Minikube.
+
+#### `make test-e2e-integration`
+Runs integration portion of the end-to-end tests.
+
+Pass arguments to go test using the `ARGS` parameter. For example `make test-e2e-integration ARGS='-run TestGameServerReserve'`.
+
+#### `make test-e2e-controller-failure'`
+Runs controller failure portion of the end-to-end tests.
 
 #### `make setup-prometheus`
 
